@@ -30,6 +30,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiYmxlZWdlIiwiYSI6ImNpbjhiMnluNTA1cjd2OWt2NW96NWgyeTMifQ.P3e_gQZb_w4fNLQs0SZ5Ag</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

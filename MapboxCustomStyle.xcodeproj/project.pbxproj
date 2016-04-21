@@ -13,7 +13,23 @@
 		A28505251CC95DF800E5C294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28505231CC95DF800E5C294 /* Main.storyboard */; };
 		A28505271CC95DF800E5C294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28505261CC95DF800E5C294 /* Assets.xcassets */; };
 		A285052A1CC95DF800E5C294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28505281CC95DF800E5C294 /* LaunchScreen.storyboard */; };
+		A28505321CC95F1F00E5C294 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28505311CC95F1F00E5C294 /* Mapbox.framework */; };
+		A28505331CC95F1F00E5C294 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A28505311CC95F1F00E5C294 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A28505341CC95F1F00E5C294 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A28505331CC95F1F00E5C294 /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A28505171CC95DF800E5C294 /* MapboxCustomStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapboxCustomStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +42,7 @@
 		A28505261CC95DF800E5C294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A28505291CC95DF800E5C294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A285052B1CC95DF800E5C294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A28505311CC95F1F00E5C294 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28505321CC95F1F00E5C294 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 		A285050E1CC95DF800E5C294 = {
 			isa = PBXGroup;
 			children = (
+				A28505311CC95F1F00E5C294 /* Mapbox.framework */,
 				A28505191CC95DF800E5C294 /* MapboxCustomStyle */,
 				A28505181CC95DF800E5C294 /* Products */,
 			);
@@ -89,6 +108,8 @@
 				A28505131CC95DF800E5C294 /* Sources */,
 				A28505141CC95DF800E5C294 /* Frameworks */,
 				A28505151CC95DF800E5C294 /* Resources */,
+				A28505341CC95F1F00E5C294 /* Embed Frameworks */,
+				A28505351CC95F4000E5C294 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -143,6 +164,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A28505351CC95F4000E5C294 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A28505131CC95DF800E5C294 /* Sources */ = {
@@ -263,6 +300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MapboxCustomStyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.MapboxCustomStyle;
@@ -274,6 +315,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MapboxCustomStyle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.MapboxCustomStyle;
